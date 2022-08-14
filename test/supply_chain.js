@@ -6,34 +6,53 @@ const SupplyChain = artifacts.require('SupplyChain');
  * See docs: https://www.trufflesuite.com/docs/truffle/testing/writing-tests-in-javascript
  */
 contract('SupplyChain', async (accounts) => {
+	const manufacturer = {
+		name: 'ManufacturerX',
+		password: 'pass123',
+		address: '0xA35df34bdc9788366298C5905b7AB591D773aee0',
+		type: 'Manufacturer',
+	};
+	const supplier = {
+		name: 'SupplierX',
+		password: 'pass345',
+		address: '0xc17668035Ec95F1C82dd06392f6C117864B2BfeA',
+		type: 'Supplier',
+	};
+	const consumer = {
+		name: 'ConsumerX',
+		password: 'pass678',
+		address: '0x1F7ff13475a75A086A172526Ca6F76C7938A1839',
+		type: 'Consumer',
+	};
+
 	it('should create a Participant', async () => {
 		let instance = await SupplyChain.deployed();
 
 		let participantId = await instance.addParticipant(
-			'ManufacturerX',
-			'pass123',
-			'0x85581dEB412A791Abfb5092ff8f452fb03109Fcc',
-			'Manufacturer'
+			manufacturer.name,
+			manufacturer.password,
+			manufacturer.address,
+			manufacturer.type
 		);
 		let participant = await instance.getParticipant(0);
 		assert.equal(participant[0], 'ManufacturerX');
 		assert.equal(participant[2], 'Manufacturer');
 
 		participantId = await instance.addParticipant(
-			'SupplierX',
-			'pass345',
-			'0xbe9A743D53CE57731589Bd23ee0013aa26028B7D',
-			'Supplier'
+			supplier.name,
+			supplier.password,
+			supplier.address,
+			supplier.type
 		);
 		participant = await instance.getParticipant(1);
 		assert.equal(participant[0], 'SupplierX');
 		assert.equal(participant[2], 'Supplier');
 
 		participantId = await instance.addParticipant(
-			'ConsumerX',
-			'pass345',
-			'0x3F87CAb3040B511768e44B80b042E4EC35ea24bC',
-			'Consumer'
+			consumer.name,
+			consumer.password,
+			consumer.address,
+			consumer.type
 		);
 		participant = await instance.getParticipant(2);
 		assert.equal(participant[0], 'ConsumerX');
