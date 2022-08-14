@@ -16,3 +16,5 @@
   - First run Ganache.
   - `npx truffle test .\test\supply_chain.js`
   - You could see new blocks are creating in Ganache.
+
+test
