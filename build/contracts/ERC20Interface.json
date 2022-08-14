@@ -194,7 +194,7 @@
   "sourceMap": "",
   "deployedSourceMap": "",
   "source": "// SPDX-License-Identifier: MIT\r\npragma solidity >=0.4.22 <0.9.0;\r\n\r\ninterface ERC20Interface {\r\n  function totalSupply() external view returns(uint);\r\n  function balanceOf(address tokenOwner) external view returns (uint balance);\r\n  function allowance(address tokenOwner, address spender) external view returns (uint remaining);\r\n  function transfer(address to, uint tokens) external returns (bool success);\r\n  function approve(address spender, uint tokens) external returns (bool success);\r\n  function transferFrom(address from, address to, uint tokens) external returns (bool success);\r\n\r\n  event Transfer(address indexed from, address indexed to, uint tokens);\r\n  event Approval(address indexed tokenOwner, address indexed spender, uint tokens);\r\n}",
-  "sourcePath": "C:\\Users\\ErangaGayashanBISTEC\\Repos\\blockchain-supplychain-dapp\\contracts\\erc20Interface.sol",
+  "sourcePath": "C:\\Users\\ErangaGayashanBISTEC\\workspaces\\dapps-workspace\\blockchain-supplychain-dapp\\contracts\\erc20Interface.sol",
   "ast": {
     "absolutePath": "project:/contracts/erc20Interface.sol",
     "exportedSymbols": {
@@ -1064,8 +1064,8 @@
     "version": "0.8.13+commit.abaa5c0e.Emscripten.clang"
   },
   "networks": {},
-  "schemaVersion": "3.4.7",
-  "updatedAt": "2022-05-24T04:04:58.084Z",
+  "schemaVersion": "3.4.9",
+  "updatedAt": "2022-08-14T15:57:17.090Z",
   "devdoc": {
     "kind": "dev",
     "methods": {},
